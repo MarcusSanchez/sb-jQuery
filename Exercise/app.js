@@ -19,15 +19,16 @@ $('ol').append('<li>Added item</li>');
 $('aside').empty().append('<p>Sorry about that list...</p>');
 
 // 7. When you change the numbers in the three inputs on the bottom, the background color of the body should change to match whatever the three values in the inputs are.
-$('input').on('change', () => {
-  let red = $(this).eq(0).val();
-  let green = $(this).eq(1).val();
-  let blue = $(this).eq(2).val();
+const $input = $('input');
+$input.on('change', () => {
+  let red = $input.eq(0).val();
+  let green = $input.eq(1).val();
+  let blue = $input.eq(2).val();
   $('body').css('background-color', `rgb(${red}, ${green}, ${blue})`);
 });
 
 // 8. Add an event listener so that when you click on the image, it is removed from the DOM.
 $('img').on('click', (e) => {
-  $(this).remove();
+  $(e.target).remove();
 });
 
